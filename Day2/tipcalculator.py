@@ -1,0 +1,10 @@
+# Write a program that calculated the tip in a restaurant. 
+print("Welcome to the tip calcuator")
+total_bill = input("What was the total bill? $")
+tip = input("What percentage of tip would you like to give? ")
+people = input(" how many people to split the bill? ")
+total_bill = float(total_bill)
+tip = int(tip)
+total_plus_tip = total_bill +(total_bill * tip/100)
+split = total_plus_tip/int(people)
+print(f"Eavh person should pay ${split}")
