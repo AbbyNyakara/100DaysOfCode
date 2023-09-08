@@ -13,15 +13,27 @@ extra cheese for any pizza: $1
 print("Please order your pizza")
 bill = 0
 
-size = input("What size of pizza would you like? S, M or L")
-pepperoni = input("Would you like pepperoni? Y or N")
-cheese = input("Would you like cheese? Y or N")
+size = input("What size of pizza would you like? S, M or L: ")
+pepperoni = input("Would you like pepperoni? Y or N: ")
+cheese = input("Would you like cheese? Y or N: ")
 
 if size == "S":
     bill += 15
+    if pepperoni == "Y":
+        bill += 2
+    if cheese == "Y":
+        bill += 1
 elif size == "M":
     bill += 20
+    if pepperoni == "Y":
+        bill += 3
+    if cheese == "Y":
+        bill += 1
 elif size == "L":
     bill += 25
+    if pepperoni == "Y":
+        bill += 3
+    if cheese == "Y":
+        bill += 1
 
 print(f"Your total bill is {bill}")
