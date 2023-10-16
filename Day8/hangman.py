@@ -2,9 +2,10 @@ import random
 import words
 import art
 
+print(art.logo)
 words = words.word_list
 random_word = random.choice(words)
-print(random_word)
+
 word_length = len(random_word)
 
 blank_list = []
