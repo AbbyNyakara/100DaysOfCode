@@ -1,26 +1,38 @@
-"""
- Refer to the attached image
-"""
+
 import random
-# Generate random words
+import ascii
 
-words = ["baboon", "camel", "amiss", "cold", "challenge"]
+words = ["baboon", "abby", "cold", "freezer"]
 random_word = random.choice(words)
-
 print(random_word)
+word_length = len(random_word)
 
-#create as many blanks as the letters in the word
-quiz = []
-for letter in random_word:
-    quiz += "_"
+blank_list = []
+for _ in range(word_length):
+    blank_list += "_"
 
-print(quiz)
-# Ask the user to guess a letter
-guess = input("Guess a letter: \n")
+print(blank_list)
 
-# Check if the letter is in the word
-if guess in random_word:
-    #Replace the letter in the blank
-    print("a")
-else:
-    print("no")
+end_of_game = False
+lives = 6
+
+while not end_of_game:
+    user_guess = input("Guess a letter \n").lower()
+
+    for position in range(word_length):
+        if user_guess == list(random_word)[position]:
+            blank_list[position] = user_guess
+
+    if user_guess not in random_word:
+        lives -= 1
+        print(ascii.stages[lives])
+        if lives == 0:
+            print("You loose!")
+            end_of_game = True
+           
+    print(blank_list)
+
+    if "_" not in blank_list:
+        end_of_game = True
+        print("You win!")
+
