@@ -1,8 +1,8 @@
-
 import random
-import ascii
+import words
+import art
 
-words = ["baboon", "abby", "cold", "freezer"]
+words = words.word_list
 random_word = random.choice(words)
 print(random_word)
 word_length = len(random_word)
@@ -25,7 +25,7 @@ while not end_of_game:
 
     if user_guess not in random_word:
         lives -= 1
-        print(ascii.stages[lives])
+        print(art.stages[lives])
         if lives == 0:
             print("You loose!")
             end_of_game = True
