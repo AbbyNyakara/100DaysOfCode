@@ -3,9 +3,8 @@
 
 import math
 
-def paint_wall(height, width):
-    number_of_cans = math.ceil((height*width)/5)
+def paint_wall(height, width, coverage):
+    number_of_cans = math.ceil((height*width)/coverage)
     print(f" You need {number_of_cans} cans of paint")
 
-
-paint_wall(5,4.5)
+paint_wall(5,7, 2)
