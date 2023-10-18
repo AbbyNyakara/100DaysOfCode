@@ -1,0 +1,1 @@
+# Write a program that takes a number as an input and checks whether its a prime/no
