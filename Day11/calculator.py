@@ -32,15 +32,14 @@ math_operations = {
 
 
 num1 = int(input("Enter the first number: "))
-num2 = int(input("Enter the second number: "))
-
 for keys, val in math_operations.items():
     print(keys)
 
 operation_symbol = input("Pick an operation from the options above: ")
-
-answer = 0
+num2 = int(input("What is the next number?: "))
 
 calculation_function = math_operations[operation_symbol]
-print(calculation_function(num1, num2))
+answer = calculation_function(num1, num2)
+
+print(f"{num1} {operation_symbol} {num2} = {answer} ")
     
