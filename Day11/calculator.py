@@ -35,14 +35,14 @@ def calculate():
     A calculator function for add, subtract, divide and multiply
     """
     
-    num1 = int(input("Enter the first number: "))
+    num1 = float(input("Enter the first number: "))
     
     should_continue = True
     while should_continue:
         for keys, val in math_operations.items():
             print(keys)
         operation_symbol = input("Pick an operation from the options above: ")
-        num2 = int(input("What is the next number?: "))
+        num2 = float(input("What is the next number?: "))
         calculation_function = math_operations[operation_symbol]
         answer = calculation_function(num1, num2)
         print(f"{num1} {operation_symbol} {num2} = {answer} ")
