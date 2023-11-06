@@ -23,7 +23,7 @@ def generate_card():
 
 # Computer_card
 computer_cards.append(generate_card())
-
+print(f"The computer's card is {computer_cards}")
 # Player card
 card_1 = generate_card()
 card_2 = generate_card()
@@ -33,11 +33,18 @@ if play == 'y':
     card_1 = generate_card()
     card_2 = generate_card()
     player_cards.append(card_1)
-    print(player_cards)
+    player_cards.append(card_2)
+    #print(player_cards)
 
+print(f" Your cards are {player_cards}. Current score is {sum(player_cards)}")
 
+pick_card = input("Type 'y' to get another card, type 'n' to pass: \n")
 
-print(generate_card())
+if pick_card == 'y'.lower():
+    new_card = generate_card()
+    player_cards.append(new_card)
 
-# def blackjack():
-#     return
+print(f"Your final hand is: {player_cards}")
+computer_cards.append(generate_card())
+
+print(f"The computer's final hand is {computer_cards}")
