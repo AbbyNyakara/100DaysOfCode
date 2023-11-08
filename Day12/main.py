@@ -16,7 +16,7 @@ def deal_card():
 
 user_cards = []
 computer_cards = []
-game_on = True
+is_game_over = False
 
 # Use for loop to run it twice: 
 
@@ -24,32 +24,48 @@ for _ in range(2):
     user_cards.append(deal_card())
     computer_cards.append(deal_card())
 
-print("The cards are:")
-print(user_cards)
-print(computer_cards)
-
 # Create a calculate_score() function that takes a list of cards and returns the total score.
 # Inside the calculate_score() function, check to see whether it is a 2-hand card and the total is 21
 # If that is the case, return 0 - meanng this is a blackjack
 
 def calculate_score(card_list):
-    sum_cards = 0
+    """Takes a list of cards and calculates the score"""
     if len(card_list) == 2 and sum(card_list) == 21:
-        sum_cards = 0
-    elif 11 in card_list and sum(card_list) > 21:
+        return 0
+    if 11 in card_list and sum(card_list) > 21:
         card_list.remove(11)
         card_list.append(1)
-    sum_cards = sum(card_list)
-    return sum_cards
+    return(sum(card_list))
 
 
-user_score = calculate_score(user_cards)
-computer_score = calculate_score(computer_cards)
+while not is_game_over:
 
-print("Total scores")
-print(user_score)
-print(computer_score)
+    user_score = calculate_score(user_cards)
+    computer_score = calculate_score(computer_cards)
 
-# Call the calculate score function and if the user has 0 or if the score is over 21, then the game ends'
+    print(f"Your cards are: {user_cards}. Your total score is {user_score}")
+    print(f"The computer's first card is {computer_cards[0]}")
+
+    # The game should end if the user score or computer score is 0 and if the user score is over 21
+    if user_score == 0 or computer_score == 0 or user_score > 21:
+        is_game_over = True
+    else:
+        draw_card = input("Would you like to draw another card? type 'y' or 'n' \n ")
+        if draw_card == 'y'.lower():
+            user_cards.append(deal_card())
+        else:
+            is_game_over = True
+
+
+# Once the user is done, its time to let the computer play. as long as the score is less than 17, 
+# the computer should keep drawing cards
+    
+while computer_score != 0 or computer_score < 17:
+    computer_score.append(deal_card())
+    # update the computer score
+    computer_score = calculate_score(computer_score)
+
+
+# Create a function called compare.Pass in the 
 
 
