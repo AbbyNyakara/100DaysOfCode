@@ -61,11 +61,32 @@ while not is_game_over:
 # the computer should keep drawing cards
     
 while computer_score != 0 or computer_score < 17:
-    computer_score.append(deal_card())
+    computer_cards.append(deal_card())
     # update the computer score
-    computer_score = calculate_score(computer_score)
+    computer_score = calculate_score(computer_cards)
 
 
-# Create a function called compare.Pass in the 
+# Create a function called compare.\
+# Pass in the user and computer scores. 
+# if the user score is same as computer score, its a draw. 
+# the one with a blackjack wins
+# The one that goes over 21 loses
+# if the other conditions are not met, The one with the higher score loses 
 
-
+def compare(user_score, computer_score):
+    if user_score == computer_score:
+        return"It's a draw"
+    elif computer_score == 0:
+        return "You lost. Oppenent has a blackjack!"
+    elif user_score == 0:
+        return "You win. User has blackjack"
+    elif computer_score > 21:
+        return "You win. Computer went over!"
+    elif user_score > 21:
+        return "You lost: You went over!"
+    elif user_score > computer_score:
+        return "You win!"
+    else: 
+        return "You lost!"
+    
+compare(user_score, computer_score)
