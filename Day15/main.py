@@ -1,8 +1,7 @@
 from art import logo, vs
 from data import data
 import random
-
-# Define the variables: 
+# Define the variables:
 
 def print_info(account):
     """Takes the account name and returns a formatted version"""
@@ -30,10 +29,9 @@ account_b = random.choice(data)
 # make the game repeatable.
 while continue_game:
 # Generate a random instagram account from the game data
-    
-
     # Format account data into printable format
 
+    # Make the account at position B to be position A
     account_a = account_b
     account_b = random.choice(data)
     if account_a == account_b:
@@ -64,9 +62,3 @@ while continue_game:
     else:
         continue_game = False
         print(f"Thats wrong: Your score: {score}")
-
-
-
-
-
-# Make the account at position B to be position A
