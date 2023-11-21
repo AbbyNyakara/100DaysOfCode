@@ -10,6 +10,12 @@ for input in question_data:
     new_question = Question(q_text = input["text"], q_answer=input["answer"])
     question_bank.append(new_question)
 
+# Create the quiz: 
 
-questions = QuizBrain(question_list=question_bank)
-questions.next_question()
+quiz = QuizBrain(question_bank)
+
+while quiz.still_has_questions():
+    quiz.next_question()
+
+print("You've completed the quiz.")
+print(f"Your total score is {quiz.score}/{len(question_bank)}")
