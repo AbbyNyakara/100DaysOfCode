@@ -8,12 +8,9 @@ class User:
         self.followers = 0 
         self.following = 0
 
-
     def follow(self, user):
         user.followers += 1
         self.following += 1
-
-
 
 # When you create a User object, you will be required to pass in 2 positional argumnts
 user1 = User("001", "Abby")
