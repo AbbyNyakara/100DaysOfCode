@@ -1,5 +1,6 @@
 from question_model import Question
 from data import question_data
+from quiz_brain import QuizBrain
 
 # Create a question bank from the list of questions in the data 
 
@@ -10,4 +11,5 @@ for input in question_data:
     question_bank.append(new_question)
 
 
-print(question_bank[0].text)
+questions = QuizBrain(question_list=question_bank)
+questions.next_question()
